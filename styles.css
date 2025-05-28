@@ -1,0 +1,165 @@
+/* GENERAL */
+img {
+  max-width: 50%;
+}
+
+section {
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+/* MAIN */
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.heroIntro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  max-width: 500px;
+  border: 2px solid lightgray;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.slideInLeftCard {
+  color: whitesmoke;
+  /* Longhand */
+  animation-name: slideLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideLeft {
+  from {
+    /* Animation start */
+    transform: translateX(-1000px);
+    background-color: #120d31;
+    /* scale: 0; */
+  }
+
+  to {
+    /* Animation slutt */
+    transform: translateX(0);
+    background-color: #acbea3;
+    color: #120d31;
+    scale: 2.5;
+  }
+}
+
+.slideInRightCard {
+  background-color: #acbea3;
+  /* Shorthand */
+  animation: slideRight 3s ease-in-out infinite forwards;
+}
+
+@keyframes slideRight {
+  0% {
+    /* Animation start */
+    transform: translateX(1000px);
+    background-color: red;
+  }
+  50% {
+    background-color: green;
+  }
+  100% {
+    /* Animation slutt */
+    transform: translateX(0px);
+    background-color: blue;
+  }
+}
+
+.rotateCard {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background-color: #8de969;
+}
+
+/* Button transitions / knapp overganger */
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px;
+  width: 100px;
+  border-radius: 40px;
+  border: 2px solid lightgray;
+}
+
+.buttonColor {
+  background-color: purple;
+  /* Longhand */
+  transition-duration: 2s;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
+  /* transition-delay: 1s; */
+}
+
+.buttonColor:hover {
+  background-color: orange;
+}
+
+.buttonSize {
+  width: inherit;
+  /* Shorthand */
+  transition: 2s scale ease-in 0.5s;
+}
+
+.buttonSize:hover {
+  scale: 0.5;
+}
+
+.bottonOpacity {
+  opacity: 0.5;
+  /* Long */
+  transition-duration: 2s;
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  /* Short */
+  transition: 2s opacity ease-out;
+}
+
+.buttonOpacity:hover {
+  opacity: 1;
+}
+/* MEDIA */
+@media (max-width: 426px) {
+  .sectionProjects {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 426px) {
+  img {
+    max-width: 100%;
+  }
+
+  .heroIntro {
+    flex-direction: column;
+  }
+}
